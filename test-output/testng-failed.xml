@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [INFO GLEN Test Automation Test Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
+  </listeners>
+  <test name="Demo Test Cases(failed)">
+    <classes>
+      <class name="com.crm.qa.testcases.NdtvWeatherVerification">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyWeatherDefaultCityOnPage"/>
+          <include name="verifyWeatherSearchByCityOnPage"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.NdtvWeatherVerification -->
+    </classes>
+  </test> <!-- Demo Test Cases(failed) -->
+</suite> <!-- Failed suite [INFO GLEN Test Automation Test Suite] -->
