@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.NdtvWeatherVerification">
+      <class name="com.qa.testcases.WiproDemo">
         <methods>
           <include name="setUp"/>
+          <include name="VerifyDesiredProductDetailsOnCheckoutPage"/>
           <include name="tearDown"/>
-          <include name="verifyWeatherDefaultCityOnPage"/>
+          <include name="loginIntoApplicationViaEmail"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.NdtvWeatherVerification -->
+      </class> <!-- com.qa.testcases.WiproDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

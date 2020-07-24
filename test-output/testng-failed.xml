@@ -6,14 +6,14 @@
   </listeners>
   <test name="Demo Test Cases(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.NdtvWeatherVerification">
+      <class name="com.qa.testcases.WiproDemo">
         <methods>
           <include name="setUp"/>
+          <include name="VerifyDesiredProductDetailsOnCheckoutPage"/>
           <include name="tearDown"/>
-          <include name="verifyWeatherDefaultCityOnPage"/>
-          <include name="verifyWeatherSearchByCityOnPage"/>
+          <include name="loginIntoApplicationViaEmail"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.NdtvWeatherVerification -->
+      </class> <!-- com.qa.testcases.WiproDemo -->
     </classes>
   </test> <!-- Demo Test Cases(failed) -->
 </suite> <!-- Failed suite [INFO GLEN Test Automation Test Suite] -->

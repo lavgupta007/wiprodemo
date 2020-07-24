@@ -7,7 +7,7 @@
 	</listeners>
 	<test name="Demo Test Cases">
 		<classes>
-			<class name="com.crm.qa.testcases.NdtvWeatherVerification"></class>
+			<class name="com.qa.testcases.WiproDemo"></class>
 		</classes>
 	</test>
 </suite>

@@ -1,28 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-06-28T12:09:46Z" name="INFO GLEN Test Automation Test Suite" finished-at="2020-06-28T12:10:23Z" duration-ms="36742">
+  <suite started-at="2020-07-24T17:19:28Z" name="INFO GLEN Test Automation Test Suite" finished-at="2020-07-24T17:20:05Z" duration-ms="36717">
     <groups>
     </groups>
-    <test started-at="2020-06-28T12:09:46Z" name="Demo Test Cases" finished-at="2020-06-28T12:10:23Z" duration-ms="36742">
-      <class name="com.crm.qa.testcases.NdtvWeatherVerification">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testcases.NdtvWeatherVerification@75c072cb]" started-at="2020-06-28T17:39:46Z" name="setUp" finished-at="2020-06-28T17:39:50Z" duration-ms="3885" status="PASS">
+    <test started-at="2020-07-24T17:19:28Z" name="Demo Test Cases" finished-at="2020-07-24T17:20:05Z" duration-ms="36717">
+      <class name="com.qa.testcases.WiproDemo">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.testcases.WiproDemo@37918c79]" started-at="2020-07-24T22:49:28Z" name="setUp" finished-at="2020-07-24T22:49:51Z" duration-ms="23464" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyWeatherDefaultCityOnPage()[pri:1, instance:com.crm.qa.testcases.NdtvWeatherVerification@75c072cb]" started-at="2020-06-28T17:39:50Z" name="verifyWeatherDefaultCityOnPage" finished-at="2020-06-28T17:39:55Z" duration-ms="4706" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="loginIntoApplicationViaEmail()[pri:0, instance:com.qa.testcases.WiproDemo@37918c79]" started-at="2020-07-24T22:49:51Z" name="loginIntoApplicationViaEmail" finished-at="2020-07-24T22:50:05Z" duration-ms="13228" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[The following asserts failed:
-	Humidity is not matched, difference found more then 5 expected [true] but found [false]]]>
+              <![CDATA[androidx.test.uiautomator.StaleObjectException
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'Lav-Gupta.domain.name', ip: 'fe80:0:0:0:84e:379a:1815:8b65%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.5', java.version: '14.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: //Users//apple//Downloads//..., appActivity: com.amazon.mShop.home.HomeA..., appPackage: com.amazon.mShop.android.sh..., automationName: uiautomator2, databaseEnabled: false, desired: {app: //Users//apple//Downloads//..., appActivity: com.amazon.mShop.home.HomeA..., appPackage: com.amazon.mShop.android.sh..., automationName: uiautomator2, deviceName: emulator-5554, platformName: android, platformVersion: 11.0}, deviceApiLevel: 30, deviceManufacturer: Google, deviceModel: sdk_gphone_x86, deviceName: emulator-5554, deviceScreenDensity: 440, deviceScreenSize: 1080x2220, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 66, takesScreenshot: true, viewportRect: {height: 2022, left: 0, top: 66, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 2084f255-46f2-463d-a53f-b61fb4b47fbd]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-	Humidity is not matched, difference found more then 5 expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)
-	at com.crm.qa.testcases.ApiDemo.validateWeatherData(ApiDemo.java:88)
-	at com.crm.qa.testcases.NdtvWeatherVerification.verifyWeatherDefaultCityOnPage(NdtvWeatherVerification.java:40)
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: androidx.test.uiautomator.StaleObjectException
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'Lav-Gupta.domain.name', ip: 'fe80:0:0:0:84e:379a:1815:8b65%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.5', java.version: '14.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: //Users//apple//Downloads//..., appActivity: com.amazon.mShop.home.HomeA..., appPackage: com.amazon.mShop.android.sh..., automationName: uiautomator2, databaseEnabled: false, desired: {app: //Users//apple//Downloads//..., appActivity: com.amazon.mShop.home.HomeA..., appPackage: com.amazon.mShop.android.sh..., automationName: uiautomator2, deviceName: emulator-5554, platformName: android, platformVersion: 11.0}, deviceApiLevel: 30, deviceManufacturer: Google, deviceModel: sdk_gphone_x86, deviceName: emulator-5554, deviceScreenDensity: 440, deviceScreenSize: 1080x2220, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 66, takesScreenshot: true, viewportRect: {height: 2022, left: 0, top: 66, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 2084f255-46f2-463d-a53f-b61fb4b47fbd
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
+	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
+	at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:100)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:40)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:60)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.sendKeys(<generated>)
+	at com.qa.pages.LoginPage.loginViaEmailAddress(LoginPage.java:136)
+	at com.qa.testcases.WiproDemo.loginIntoApplicationViaEmail(WiproDemo.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -50,42 +85,18 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyWeatherDefaultCityOnPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testcases.NdtvWeatherVerification@75c072cb]" started-at="2020-06-28T17:39:55Z" name="tearDown" finished-at="2020-06-28T17:39:55Z" duration-ms="92" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testcases.NdtvWeatherVerification@75c072cb]" started-at="2020-06-28T17:39:55Z" name="setUp" finished-at="2020-06-28T17:39:56Z" duration-ms="1279" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyWeatherSearchByCityOnPage()[pri:2, instance:com.crm.qa.testcases.NdtvWeatherVerification@75c072cb]" started-at="2020-06-28T17:39:56Z" name="verifyWeatherSearchByCityOnPage" finished-at="2020-06-28T17:40:23Z" duration-ms="26668" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- loginIntoApplicationViaEmail -->
+        <test-method signature="VerifyDesiredProductDetailsOnCheckoutPage()[pri:0, instance:com.qa.testcases.WiproDemo@37918c79]" started-at="2020-07-24T22:50:05Z" name="VerifyDesiredProductDetailsOnCheckoutPage" finished-at="2020-07-24T22:50:05Z" depends-on-methods="com.qa.testcases.WiproDemo.loginIntoApplicationViaEmail" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[The following asserts failed:
-	Temp in Degrees is not matched, difference found more then 5 expected [true] but found [false],
-	Temp in Fahrenheit is not matched, difference found more then 5 expected [true] but found [false],
-	Humidity is not matched, difference found more then 5 expected [true] but found [false]]]>
+              <![CDATA[Method WiproDemo.VerifyDesiredProductDetailsOnCheckoutPage()[pri:0, instance:com.qa.testcases.WiproDemo@37918c79] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-	Temp in Degrees is not matched, difference found more then 5 expected [true] but found [false],
-	Temp in Fahrenheit is not matched, difference found more then 5 expected [true] but found [false],
-	Humidity is not matched, difference found more then 5 expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)
-	at com.crm.qa.testcases.ApiDemo.validateWeatherData(ApiDemo.java:88)
-	at com.crm.qa.testcases.NdtvWeatherVerification.verifyWeatherSearchByCityOnPage(NdtvWeatherVerification.java:47)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+              <![CDATA[java.lang.Throwable: Method WiproDemo.VerifyDesiredProductDetailsOnCheckoutPage()[pri:0, instance:com.qa.testcases.WiproDemo@37918c79] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 	at org.testng.TestRunner.privateRun(TestRunner.java:744)
@@ -105,15 +116,15 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyWeatherSearchByCityOnPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testcases.NdtvWeatherVerification@75c072cb]" started-at="2020-06-28T17:40:23Z" name="tearDown" finished-at="2020-06-28T17:40:23Z" duration-ms="91" status="PASS">
+        </test-method> <!-- VerifyDesiredProductDetailsOnCheckoutPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testcases.WiproDemo@37918c79]" started-at="2020-07-24T22:50:05Z" name="tearDown" finished-at="2020-07-24T22:50:05Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.crm.qa.testcases.NdtvWeatherVerification -->
+      </class> <!-- com.qa.testcases.WiproDemo -->
     </test> <!-- Demo Test Cases -->
   </suite> <!-- INFO GLEN Test Automation Test Suite -->
 </testng-results>
