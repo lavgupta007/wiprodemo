@@ -186,10 +186,14 @@ public class LoginPage  extends TestBase {
 		try {
 			String CHECKOUT_PRODUCT_NAME,CHECKOUT_PRODUCT_DESCRIPTION;
 			int CHECKOUT_PRODUCT_PRICE;
-			CHECKOUT_PRODUCT_NAME=checkoutpagebrandname.getText();
+			CHECKOUT_PRODUCT_NAME=checkoutpagebrandname.getText().split("\\s+")[1];
+			if(CHECKOUT_PRODUCT_NAME.contains("by") || CHECKOUT_PRODUCT_NAME.equalsIgnoreCase("brand") )
+				CHECKOUT_PRODUCT_NAME=CHECKOUT_PRODUCT_NAME.split("\\s+")[1];
 			CHECKOUT_PRODUCT_DESCRIPTION=checkoutpagedescription.getText();
 			TestUtil.scrollUp(1);
-			CHECKOUT_PRODUCT_PRICE=Integer.parseInt((checkoutpageproductmainprice.getText()+""+checkoutpageproductcentsprice.getText()).replace("$", "").replace(",", "").replace(".", "").replace("\\s", "").trim());
+			String tempprice=(checkoutpageproductmainprice.getText()+""+checkoutpageproductcentsprice.getText());
+			tempprice=tempprice.replace("$", "").replace(",", "").replace(".", "").replaceAll("\\s", "").trim();
+			CHECKOUT_PRODUCT_PRICE=Integer.parseInt(tempprice);
 			System.out.println(CHECKOUT_PRODUCT_NAME);
 			System.out.println(CHECKOUT_PRODUCT_DESCRIPTION);
 			System.out.println(CHECKOUT_PRODUCT_PRICE);

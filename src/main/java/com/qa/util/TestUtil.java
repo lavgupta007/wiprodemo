@@ -95,7 +95,7 @@ public class TestUtil extends TestBase {
 	public static void scrollUp(int loop) 
 	{
 		int i=0;
-		while(i<=loop)
+		while(i<loop)
 		{
 		TouchAction action = new TouchAction(driver);
 		PointOption p1= new PointOption();
