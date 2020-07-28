@@ -10,11 +10,11 @@ import com.qa.base.TestBase;
 import com.qa.pages.LoginPage;
 import com.qa.util.TestUtil;
 
-public class WiproDemo extends TestBase{
+public class AppiumDemo extends TestBase{
 	TestUtil testUtil;
 	LoginPage loginpage;
 
-	public WiproDemo() {
+	public AppiumDemo() {
 		super();
 	}
 
