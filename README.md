@@ -16,6 +16,6 @@ Maven
 
 ### Steps to clone execute the tests
 ```
-git clone https://github.com/lavgupta007/wiprodemo.git
+git clone https://github.com/lavgupta007/appiumdemo.git
 mvn clean test
 ```
