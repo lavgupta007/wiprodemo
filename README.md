@@ -7,15 +7,15 @@ Java
 Maven
 
 ###libraries used
-Appium
-TestNG
-PageFactory
-AppiumWebDriverEventListener
-log4j
-Extent Reports
+1. Appium
+2. TestNG
+3. PageFactory
+4. AppiumWebDriverEventListener
+5. log4j
+6. Extent Reports
 
 ### Steps to clone execute the tests
 ```
-git clone https://github.com/lavgupta007/wiprodemo.git
+git clone https://github.com/lavgupta007/appiumdemo.git
 mvn clean test
 ```
