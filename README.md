@@ -11,7 +11,7 @@ Maven
 2. TestNG
 3. PageFactory
 4. AppiumWebDriverEventListener
-5. log4j
+5. org.slf4j
 6. Extent Reports
 
 ### Steps to clone execute the tests
