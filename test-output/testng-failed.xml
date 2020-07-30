@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [INFO GLEN Test Automation Test Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
-  </listeners>
-  <test name="Demo Test Cases(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.qa.testcases.WiproDemo">
+      <class name="com.qa.testcases.AppiumDemo">
         <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
           <include name="VerifyDesiredProductDetailsOnCheckoutPage"/>
-          <include name="tearDown"/>
           <include name="loginIntoApplicationViaEmail"/>
         </methods>
-      </class> <!-- com.qa.testcases.WiproDemo -->
+      </class> <!-- com.qa.testcases.AppiumDemo -->
     </classes>
-  </test> <!-- Demo Test Cases(failed) -->
-</suite> <!-- Failed suite [INFO GLEN Test Automation Test Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

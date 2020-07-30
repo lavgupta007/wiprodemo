@@ -47,77 +47,6 @@ public class TestUtil extends TestBase {
 	static Sheet sheet;
 	static JavascriptExecutor js;
 
-	public void switchToFrame() {
-		driver.switchTo().frame("mainpanel");
-	}
-
-	public void switchToFrameDemo() {
-		//		driver.switchTo().frame(0);
-		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='demo-frame']")));
-
-	}
-
-	public static void scrollTillBottom() {
-		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		TestUtil.wait(5);
-	}
-
-	public static void waitForElementPresent(WebElement we)
-	{
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.elementToBeClickable(we));
-	}
-
-	public static void wait(int t)  {
-		try {
-			Thread.sleep(1000*t);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	public static void scrollUp2(MobileElement me) 
-	{
-		while(true)
-		{
-		Point point = me.getCenter();
-		TouchAction action = new TouchAction(driver);
-		System.out.println(point.getX()+" "+point.getY());
-		action.press(PointOption.point(point.getX(),point.getY())).waitAction(WaitOptions.waitOptions(Duration.ofMillis(50))).release().perform();
-		}
-	
-	}
-
-	
-	
-	public static void scrollUp(int loop) 
-	{
-		int i=0;
-		while(i<loop)
-		{
-		TouchAction action = new TouchAction(driver);
-		PointOption p1= new PointOption();
-		Dimension dimensions = driver.manage().window().getSize();
-		Double screenHeightStart = dimensions.getHeight() * 0.5;
-		int h1 = screenHeightStart.intValue();
-		Double screenHeightEnd = dimensions.getHeight() * 0.2;
-		int h2 = screenHeightEnd.intValue();
-		action.press(PointOption.point(0,h1))
-		.waitAction(new WaitOptions().withDuration(Duration.ofMillis(600)))
-		.moveTo(PointOption.point(0, h2))
-		.release()
-		.perform();
-		i++;
-		}
-	}
-
-	public static void scrollDown() {
-
-
-	}
-
 	public static Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
 		try {
@@ -134,8 +63,6 @@ public class TestUtil extends TestBase {
 		}
 		sheet = book.getSheet(sheetName);
 		Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
-		// System.out.println(sheet.getLastRowNum() + "--------" +
-		// sheet.getRow(0).getLastCellNum());
 		for (int i = 0; i < sheet.getLastRowNum(); i++) {
 			for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
 				data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
@@ -179,10 +106,6 @@ public class TestUtil extends TestBase {
 			js.executeScript("$.growl.warning({ title: 'Warning!', message: 'your warning message goes here' });");
 		}else
 			System.out.println("no error message");
-		// jquery-growl w/ colorized output
-		//		js.executeScript("$.growl.error({ title: 'ERROR', message: 'your error message goes here' });");
-		//		js.executeScript("$.growl.notice({ title: 'Notice', message: 'your notice message goes here' });");
-		//		js.executeScript("$.growl.warning({ title: 'Warning!', message: 'your warning message goes here' });");
 		Thread.sleep(5000);
 	}
 

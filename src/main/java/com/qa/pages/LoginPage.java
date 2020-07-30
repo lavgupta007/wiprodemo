@@ -4,6 +4,8 @@ import static java.time.Duration.ofSeconds;
 import java.util.List;
 
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.asserts.SoftAssert;
 
 import com.qa.base.TestBase;
@@ -22,6 +24,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
  */
 public class LoginPage  extends TestBase {
 
+	public static Logger logger = LoggerFactory.getLogger(LoginPage.class);
 	public String PRODUCT_NAME,PRODUCT_DESCRIPTION;
 	public int PRODUCT_PRICE;
 
@@ -64,10 +67,8 @@ public class LoginPage  extends TestBase {
 	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/loc_ux_pin_code_button")
 	MobileElement selectpincodebbutton;
 
-
 	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/loc_ux_pin_code_text_pt1")
 	MobileElement enterpincodetextfield;
-
 
 	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/loc_ux_update_pin_code")
 	MobileElement undatepincodebutton;
@@ -81,21 +82,20 @@ public class LoginPage  extends TestBase {
 	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/action_bar_cart")
 	MobileElement cartbarlogo;
 
-
-
 	@AndroidFindBy(xpath = "//android.view.View[@resource-id='bylineInfo']/android.widget.TextView")
 	MobileElement checkoutpagebrandname;
 
 	@AndroidFindBy(xpath = "//android.view.View[@resource-id='title_feature_div']/android.view.View")
 	MobileElement checkoutpagedescription;
+	
+	@AndroidFindBy(xpath = "//android.view.View[@resource-id='priceblock_ourprice']")
+	List<MobileElement> checkoutpageproductfirstmainprice;
 
 	@AndroidFindBy(xpath = "//android.view.View[@resource-id='newPitchPriceWrapper_feature_div']/android.view.View/android.widget.TextView[2]")
 	MobileElement checkoutpageproductmainprice;
-	
+
 	@AndroidFindBy(xpath = "//android.view.View[@resource-id='newAccordionRow']//android.view.View/android.widget.RadioButton")
 	MobileElement checkoutpageproductmainprice1;
-	
-	
 
 	@AndroidFindBy(xpath = "//android.view.View[@resource-id='newPitchPriceWrapper_feature_div']/android.view.View/android.widget.TextView[3]")
 	MobileElement checkoutpageproductcentsprice;
@@ -120,95 +120,91 @@ public class LoginPage  extends TestBase {
 
 
 	// Initializing the Page Objects:
-	public LoginPage() {
-		//		PageFactory.initElements(driver, this);
+	public LoginPage() 
+	{
 		PageFactory.initElements(new AppiumFieldDecorator(driver, ofSeconds(5)), this);
 	}
 
 	public void clickOnAlreadyaCustomer(){
-		TestUtil.waitForElementPresent(alreadyacustomer);
+		waitForElementPresent(alreadyacustomer);
 		alreadyacustomer.click();
-		TestUtil.wait(5);
+		wait(5);
 	}
 
 	public void loginViaEmailAddress(){
-		TestUtil.waitForElementPresent(emailfield);
+		waitForElementPresent(emailfield);
 		emailfield.sendKeys(username);
 		continuebutton.click();
-		TestUtil.waitForElementPresent(passwordfield);
+		waitForElementPresent(passwordfield);
 		passwordfield.sendKeys(password);
 		signinbutton.click();
-		TestUtil.wait(5);
+		wait(5);
 	}
 
 	public void searchDesireProduct(){
 		int loopcount=0;
-		TestUtil.waitForElementPresent(productsearchfield);
+		waitForElementPresent(productsearchfield);
 		productsearchfield.click();
-		TestUtil.wait(3);
+		wait(3);
 		productsearchfield.sendKeys(product);
-		TestUtil.waitForElementPresent(searchresultoptions);
-		TestUtil.wait(3);
+		waitForElementPresent(searchresultoptions);
+		wait(3);
 		searchresultoptions.click();
-		TestUtil.wait(5);
-		TestUtil.waitForElementPresent(productbrandname);
+		wait(5);
+		waitForElementPresent(productbrandname);
 		loopcount=Integer.parseInt(productresultcount.getText().replaceAll("[^\\d.]", "").trim());
-		System.out.println("Total results are showing on the page : "+loopcount);
+		logger.info("Total results are showing on the page : "+loopcount);
 		if(loopcount>100) {
 			loopcount=3;
 
 		}else {
 			loopcount=2;
 		}
-		TestUtil.scrollUp(loopcount);
-		TestUtil.wait(3);
-		System.out.println("*************************************************");
-		System.out.println("Selected Product Brand Name is : "+(PRODUCT_NAME=productbrandname.getText().split("\\s+")[1]));
-		System.out.println("Selected Product Description is : "+(PRODUCT_DESCRIPTION=productdescription.getText()));
-		System.out.println("Selected Product Description is : "+(PRODUCT_PRICE=Integer.parseInt(productprice.getText().replace("$", "").replace(",", "").replace(".", "").split("\\s+")[0].trim())));
-		System.out.println("*************************************************");
-		//		System.out.println(productdescriptionall.size());
-		//		for(MobileElement me:productdescriptionall) {
-		//			
-		//			System.out.println(me.getText());
-		//		}
-		productbrandname.click();
-		TestUtil.wait(2);
-		TestUtil.waitForElementPresent(checkoutpagebrandname);
-//		System.out.println(checkoutpagebrandname.getText());
-//		System.out.println(checkoutpagedescription.getText());
-//		TestUtil.scrollUp(1);
-//		System.out.println((checkoutpageproductmainprice.getText()+""+checkoutpageproductcentsprice.getText()).trim());
-	}
+		scrollUp(loopcount);
+		wait(5);
+		logger.info("*************************************************");
+		logger.info("Selected Product Brand Name is : "+(PRODUCT_NAME=productbrandname.getText().split("\\s+")[1]));
+		logger.info("Selected Product Description is : "+(PRODUCT_DESCRIPTION=productdescription.getText()));
+		logger.info("Selected Product Description is : "+(PRODUCT_PRICE=Integer.parseInt(productprice.getText().replace("$", "").replace(",", "").replace(".", "").split("\\s+")[0].trim())));
+		logger.info("*************************************************");
+		productprice.click();
+		wait(2);
+		waitForElementPresent(checkoutpagebrandname);
+		}
 
 	public void verifyProductDetails()
 	{
 		try {
 			String CHECKOUT_PRODUCT_NAME,CHECKOUT_PRODUCT_DESCRIPTION;
 			int CHECKOUT_PRODUCT_PRICE;
-			CHECKOUT_PRODUCT_NAME=checkoutpagebrandname.getText().split("\\s+")[1];
+			CHECKOUT_PRODUCT_NAME=checkoutpagebrandname.getText();
 			if(CHECKOUT_PRODUCT_NAME.contains("by") || CHECKOUT_PRODUCT_NAME.equalsIgnoreCase("brand") )
 				CHECKOUT_PRODUCT_NAME=CHECKOUT_PRODUCT_NAME.split("\\s+")[1];
 			CHECKOUT_PRODUCT_DESCRIPTION=checkoutpagedescription.getText();
-			TestUtil.scrollUp(1);
-			String tempprice=(checkoutpageproductmainprice.getText()+""+checkoutpageproductcentsprice.getText());
+			scrollUp(1);
+			wait(2);
+			String tempprice;
+			if(checkoutpageproductfirstmainprice.size()>0)
+				tempprice=checkoutpageproductfirstmainprice.get(0).getText();
+			else
+			tempprice=(checkoutpageproductmainprice.getText()+""+checkoutpageproductcentsprice.getText());
 			tempprice=tempprice.replace("$", "").replace(",", "").replace(".", "").replaceAll("\\s", "").trim();
 			CHECKOUT_PRODUCT_PRICE=Integer.parseInt(tempprice);
-			System.out.println(CHECKOUT_PRODUCT_NAME);
-			System.out.println(CHECKOUT_PRODUCT_DESCRIPTION);
-			System.out.println(CHECKOUT_PRODUCT_PRICE);
+			logger.info("CHECKOUT_PRODUCT_NAME IS : "+CHECKOUT_PRODUCT_NAME);
+			logger.info("CHECKOUT_PRODUCT_DESCRIPTION IS : "+CHECKOUT_PRODUCT_DESCRIPTION);
+			logger.info("CHECKOUT_PRODUCT_PRICE IS : "+CHECKOUT_PRODUCT_PRICE);
 			SoftAssert softAssert = new SoftAssert();
 			softAssert.assertEquals(CHECKOUT_PRODUCT_NAME, PRODUCT_NAME, "Desired Product Name Not Mached With Excepted Result");
 			softAssert.assertEquals(CHECKOUT_PRODUCT_DESCRIPTION, PRODUCT_DESCRIPTION, "Desired Product Description Not Mached With Excepted Result");
 			softAssert.assertEquals(CHECKOUT_PRODUCT_PRICE, PRODUCT_PRICE, "Desired Product Price Not Mached With Excepted Result");
 			softAssert.assertAll();
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			System.out.println();
+			logger.error("Exception occour in verifyProductDetails method");
 		}
-		
+
 
 
 	}

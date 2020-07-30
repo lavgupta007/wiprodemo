@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.qa.testcases.WiproDemo">
+      <class name="com.qa.testcases.AppiumDemo">
         <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
           <include name="VerifyDesiredProductDetailsOnCheckoutPage"/>
-          <include name="tearDown"/>
           <include name="loginIntoApplicationViaEmail"/>
         </methods>
-      </class> <!-- com.qa.testcases.WiproDemo -->
+      </class> <!-- com.qa.testcases.AppiumDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

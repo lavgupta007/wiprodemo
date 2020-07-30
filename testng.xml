@@ -7,7 +7,7 @@
 	</listeners>
 	<test name="Demo Test Cases">
 		<classes>
-			<class name="com.qa.testcases.WiproDemo"></class>
+			<class name="com.qa.testcases.AppiumDemo"></class>
 		</classes>
 	</test>
 </suite>
